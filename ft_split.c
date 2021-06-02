@@ -81,6 +81,8 @@ char	**ft_split(char const *s, char c)
 	int		size;
 	int		sub_count;
 
+	if (s == NULL)
+		return (NULL);
 	str = ft_strdup(s);
 	size = ft_strlen(str);
 	str = c_to_zero(str, c, size);
@@ -89,5 +91,6 @@ char	**ft_split(char const *s, char c)
 	if (result == NULL)
 		return (NULL);
 	write_result(result, str, size);
+	free(str);
 	return (result);
 }

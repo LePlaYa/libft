@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	get_length(int tmp, int *dec, int *count)
 {
@@ -59,13 +58,13 @@ char	*ft_itoa(int n)
 	tmp = 0;
 	if (n < 0)
 	{
-		result = malloc(sizeof(char) * (count + 2));
+		result = malloc(sizeof(char) * (count + 3));
 		result[tmp] = '-';
 		n = n * -1;
 		tmp++;
 	}
 	else
-		result = malloc(sizeof(char) * (count + 1));
+		result = malloc(sizeof(char) * (count + 2));
 	write_string(n, &dec, &tmp, result);
 	result[tmp] = '\0';
 	return (result);
